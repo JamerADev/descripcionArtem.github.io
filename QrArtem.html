@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perfil — CEO</title>
+  <style>
+    :root{
+      --primary:#6552D8;
+      --fg:#0f172a;
+      --muted:#475569;
+      --bg:#f9f9fc;
+    }
+    body{margin:0;font-family:Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg);}
+    .container{max-width:900px;margin:auto;padding:2rem;display:grid;grid-template-columns:300px 1fr;gap:2rem;align-items:start;}
+    h1{margin:0;font-size:2rem;color:var(--primary);} h2{margin:.25rem 0 1rem;font-size:1.1rem;color:var(--muted);}
+    .lead{font-size:1.1rem;line-height:1.5;color:var(--fg);}
+    .bio{margin:1rem 0;line-height:1.6;}
+    .photo-wrap{text-align:center;}
+    .photo{width:160px;height:160px;border-radius:50%;background:var(--primary);color:white;font-size:3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;overflow:hidden;}
+    .photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+    .company-logo{margin:1rem auto;max-width:200px;}
+    .company-logo img{width:100%;height:auto;border-radius: 8px; /* opcional */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); /* sombra discreta */}
+    .company-badge{margin:0.5rem 0;font-weight:600;color:var(--primary);}
+    .meta{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem;}
+    .chip{font-size:.85rem;background:#eee;padding:.35rem .6rem;border-radius:999px;}
+    .contact{display:flex;align-items:center;margin:1.5rem 0;gap:1rem;}
+    .btn{background:var(--primary);border:none;color:white;padding:.6rem 1rem;border-radius:8px;cursor:pointer;font-size:.9rem;}
+    .btn.secondary{background:#ddd;color:var(--fg);}
+    .btn:hover{opacity:.9;}
+    .socials{display:flex;gap:1rem;font-size:1.4rem;margin-top:1rem;}
+    .socials a{text-decoration:none;color:var(--primary);font-weight:bold;}
+    footer{grid-column:1/3;text-align:center;font-size:.8rem;color:var(--muted);margin-top:2rem;}
+    @media(max-width:700px){.container{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <aside class="photo-wrap" aria-label="Foto, logo y datos">
+      <div class="photo">
+        <img src="./Img/Artem.jpeg" alt="Foto del CEO">
+        
+      </div>
+      <div class="company-logo">
+        <!-- Reemplaza con tu logo -->
+        <img src="./Img/credito365.png" alt="Logo de la empresa">
+      </div>
+      <div class="company-badge">Credito365</div>
+      <div class="meta">
+        <div class="chip">📍 Medellin, Colombia</div>
+        
+      </div>
+    </aside>
+
+    <section>
+      <h1>Artem Zinchenko</h1>
+      <h2>CEO-Credito365</h2>
+
+      <p class="lead">Ejecutivo con sólida trayectoria en el sector financiero y amplia experiencia liderando compañías fintech de alcance internacional, miembro del grupo Aventus Group. Especialista en Economía y Dirección Empresarial, ha guiado iniciativas de transformación digital, innovación en productos financieros y expansión hacia nuevos mercados.</p>
+
+      <div class="lead">
+        Executive with a solid track record in the financial sector and extensive experience leading international fintech companies, member of the Aventus Group. Specialist in Economics and Business Management, he has led initiatives in digital transformation, financial product innovation, and expansion into new markets.
+      </div>
+
+      <div class="contact">
+        <button class="btn" onclick="window.location.href='mailto:artem.zinchenko@credito365.co'">Contactar</button>
+        <p >artem.zinchenko@credito365.co</p>
+        
+      </div>
+
+      <div class="socials" aria-label="Redes sociales">
+        <a href="https://www.linkedin.com/in/artemzinchenko/" title="LinkedIn">in</a>
+        <a href="tel:3217535353" title="Phone">📞</a>
+        <a href="https://credito365.co/" title="Website">w</a>
+      </div>
+    </section>
+
+    <footer>
+      Perfil ejecutivo • Para presentación en eventos o pdf corporativo
+    </footer>
+  </main>
+
+  <script>
+    function downloadVCard(){
+      const vcard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:Juan Perez',
+        'TITLE:Chief Executive Officer',
+        'ORG:ACME Corp',
+        'TEL;TYPE=WORK,VOICE:+57-300-000-0000',
+        'EMAIL;TYPE=WORK:juan.perez@acme.example',
+        'URL:http://www.acme.example',
+        'ADR;TYPE=WORK:;;Calle Principal 123;Bogota;;111111;Colombia',
+        'END:VCARD'
+      ].join('\n');
+
+      const blob = new Blob([vcard], {type: 'text/vcard'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'juan-perez.vcf';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
