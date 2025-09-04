@@ -74,6 +74,7 @@
       <div class="socials" aria-label="Redes sociales">
       <a href="https://www.linkedin.com" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
       <a href="https://wa.me/573000000000" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://telegram.me/+573217535353" title="Telegram"><i class="fab fa-telegram"></i></a>
       <a href="https://www.empresa.com" title="Website"><i class="fas fa-globe"></i></a>
     </div>
     </section>
@@ -83,30 +84,9 @@
     </footer>
   </main>
 
-  <script>
-    function downloadVCard(){
-      const vcard = [
-        'BEGIN:VCARD',
-        'VERSION:3.0',
-        'FN:Juan Perez',
-        'TITLE:Chief Executive Officer',
-        'ORG:ACME Corp',
-        'TEL;TYPE=WORK,VOICE:+57-300-000-0000',
-        'EMAIL;TYPE=WORK:juan.perez@acme.example',
-        'URL:http://www.acme.example',
-        'ADR;TYPE=WORK:;;Calle Principal 123;Bogota;;111111;Colombia',
-        'END:VCARD'
-      ].join('\n');
-
-      const blob = new Blob([vcard], {type: 'text/vcard'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'juan-perez.vcf';
-      document.body.appendChild(a); a.click(); a.remove();
-      URL.revokeObjectURL(url);
-    }
-  </script>
+ 
 </body>
 </html>
+
 
 
